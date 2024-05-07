@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hover" v-show="isVisible">
+                <div class="hover" v-if="singleDisc">
                     <div class="card">
                         <div class="poster">
                             <img :src="singleDisc.poster" :alt="singleDisc.title">

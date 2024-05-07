@@ -4,8 +4,7 @@ createApp({
     data() {
         return {
             discs: [],
-            singleDisc: {},
-            isVisible: false
+            singleDisc: null,
         };
     },
     methods: {
@@ -20,16 +19,15 @@ createApp({
                 discIndex: index
             };
 
-            axios.get("server.php", { params: param })
+            axios.get("server.php", {
+                params: param
+            })
             .then((response) => {
                 this.singleDisc = response.data;
             })
-
-            this.isVisible = true;
         },
         close(){
-            this.isVisible = false;
-            this.singleDisc = {};
+            this.singleDisc = null;
         }
     },
     mounted() {
